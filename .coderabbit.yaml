@@ -1,0 +1,21 @@
+language: "en-US"
+reviews:
+  profile: "assertive"
+  request_changes_workflow: true
+  auto_approve: true
+  high_level_summary: true
+  poem: false
+  review_status: true
+  path_instructions:
+    - path: "**/*"
+      instructions: |
+        Merge policy: treat every actionable finding as merge-blocking unless the author explains why it is a false positive.
+        Report bugs, security issues (injection, secrets, auth), reliability, performance problems, and clear maintainability issues.
+        Prefer inline comments; use Request changes when anything must be fixed before merge.
+  auto_review:
+    enabled: true
+    drafts: false
+    base_branches:
+      - ".*"
+chat:
+  auto_reply: true
